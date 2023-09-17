@@ -7,13 +7,13 @@
 
 **a) Install GPG:**
 
-    $ brew install gpg    
+     brew install gpg    
     
 [for windows](https://www:ibiblio:org/shadow/pgp/install-gpg.pdf)  
 
 **b) Generate a new GPG key:**
 
-    $ gpg --full-generate-key
+     gpg --gen-key
 
 - Keep in mind the following settings:
     - Choose an RSA key (Option 1)
@@ -24,11 +24,11 @@
   
 **c) Verify the GPG key:**
 
-    $ gpg --list-secret-keys --keyid-format LONG
+     gpg --list-secret-keys --keyid-format LONG
 
 **d) Export the key to gitHub:**
 
-    $ gpg --armor --export [THIS_KEY_ID]
+     gpg --armor --export [THIS_KEY_ID]
 
 - This will generate a large block of code. copy the whole section, including the comments and paste it in Github.
 - In GitHub, click on your profile image -> Settings. Choose SSH and GPG Keys from the left menu,
@@ -36,14 +36,14 @@
 
 **e) Configure git to always sign commits using the key:**
 
-    $ git config --global user.signingkey [THIS_KEY_ID]
-    $ git config --global commit.gpgsign true
+     git config --global user.signingkey [THIS_KEY_ID]
+     git config --global commit.gpgsign true
 
 **f) Creating a custom commit message:**
 
 - i) Edit the .gitconfig file to point git to the template we are creating:
 
-       $ git config --global commit.template ~/.gitmessage
+        git config --global commit.template ~/.gitmessage
     
  - Alternatively, you can VI into .gitconfig file and add the contents below.
 
@@ -66,7 +66,7 @@ Note
 
 - c) Now when you commit any updates, only type git commit and the editor will pop up for you to provide the context:
 
-       $ git commit
+        git commit
 
 **2. Using SSH keys:**
 - You can find instructions on how to use ssh keys from the link below.
